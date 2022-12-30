@@ -12,8 +12,8 @@ class App extends React.Component {
     person: {
       fullName: 'Hedyene Mili',
       imgSrc: photo ,
-      bio: 'A software dev',
-      profession: 'Software dev'
+      bio: 'I am a software developer with a passion for building web applications.',
+      profession: 'Software Developer'
     },
     shows: false,
     timeInterval: 0
@@ -31,17 +31,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.setState({ shows: !this.state.shows })}>Toggle</button>
+      <div className='App'>
+        <button onClick={() => this.setState({ shows: !this.state.shows })} >Toggle</button>
         {this.state.shows && (
-          <div>
-            <img src={this.state.person.imgSrc} alt={this.state.person.fullName} />
+          <div >
+            <img src={this.state.person.imgSrc} alt={this.state.person.fullName} style={{ height:'40vmin',alignItems: 'center' }} />
             <h1>{this.state.person.fullName}</h1>
             <p>{this.state.person.bio}</p>
             <p>Profession: {this.state.person.profession}</p>
+            <p>Time interval: {this.state.timeInterval} seconds</p>
           </div>
+        
         )}
-        <p>Time interval: {this.state.timeInterval} seconds</p>
+       
       </div>
     )
   }
